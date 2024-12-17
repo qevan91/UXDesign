@@ -1,0 +1,209 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    background-image: url('../img/imagefond.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container input[type="text"] {
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 1rem;
+}
+
+.search-container button {
+    width: 25%;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #3e8e41;
+}
+
+.search-container a {
+    text-decoration: none;
+    color: #337ab7;
+}
+
+.search-container a:hover {
+    color: #23527c;
+}
+
+#search-results {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(63, 63, 63, 0.75);
+    border-radius: 20px;
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+ul li {
+    flex-basis: calc(20% - 2rem);
+    box-sizing: border-box;
+    background-color: rgba(244, 244, 244, 0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+ul li:hover {
+    transform: translateY(-5px);
+}
+
+ul li img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+ul li p {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.pagination {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.pagination a {
+    color: #333;
+    padding: 12px 18px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+}
+
+.pagination .active {
+    background-color: #007bff;
+    color: white;
+    border-color: #007bff;
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pagination .disabled {
+    color: #ccc;
+    pointer-events: none;
+    border: 1px solid #ddd;
+}
+
+.pagination a:first-child,
+.pagination a:last-child {
+    border-radius: 5px;
+    padding: 10px 15px;
+}
+
+.lazy-load-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    min-height: 100px;
+}
+
+.lazy-text {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.lazy-load-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.lazy-load-container.loading::before {
+    display: block;
+}
+
+.lazy-load-container.loaded img,
+.lazy-load-container.loaded .lazy-text {
+    opacity: 1;
+}
+
+.lazy-load-container.loaded::before {
+    display: none;
+}
+
+ul li button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: revert;
+}
+
+ul li button:hover {
+    background-color: #0056b3;
+}
